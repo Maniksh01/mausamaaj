@@ -11,8 +11,11 @@ const datahide = document.querySelector(".temp-info-bottom");
 
 
 const getInfo = async(event) => {
+   
 event.preventDefault();
+
 let cityVal = cityName.value;
+
 if(cityVal===""){
     outputName.innerText = `City Name Can't be empty`;
     datahide.classList.add("data_hide");
