@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWeb</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://kit.fontawesome.com/7da47389fa.js" crossorigin="anonymous"></script>
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--------------------- header  ---------------->
+    {{>navbar}}
+    <!------------------  nav-body -------------------->
+    <div class="container-fluid nav-body">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+               <div class="main-weather-content">
+                   <form action="" class="weather-form">
+                       <input type="text" id="cityName" placeholder="Enter Your City" autocomplete="off">
+                       <input type="Submit" value="Search" id="submitbtn">
+                   </form>
+               </div>
+               <div class="temp-info">
+                   <div class="temp-info-up">
+                       <p id="day"></p>
+                       <p id="date">30</p>
+                   </div>
+                   <div class="temp-info-main">
+                       <p id="outputName"></p>
+                       <div class="temp-info-bottom data_hide">
+                           <p id="temp"><span id="temp_text">0</span> <sup>o</sup>c</p>
+                           <p id="temp_status"> <i class="fas fa-cloud"></i></p>
+
+
+                       </div>
+                   </div>
+               </div>
+
+            </div>
+        </div>
+    </div>
+   <!-------------- footer   -------------------->
+   {{>footer}}
+
+   <script src="js/main.js"> </script >
+   <script>
+       const curDate = document.getElementById("date");
+       const day = document.getElementById("day");
+       const getCurrentDay = () => {
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            let currentTime = new Date();
+           let day = (weekday[currentTime.getDay()]);
+           return day;
+        };
+        const getCurrentTime = () => {
+            var month = new Array();
+            month[0] = "January";
+            month[1] = "February";
+            month[2] = "March";
+            month[3] = "April";
+            month[4] = "May";
+            month[5] = "June";
+            month[6] = "July";
+            month[7] = "August";
+            month[8] = "September";
+            month[9] = "October";
+            month[10] = "November";
+            month[11] = "December";
+
+
+            var now = new Date();
+            var months = month[now.getMonth() ];
+            var date = now.getDate();
+
+            let hours = now.getHours();
+            let mins = now.getMinutes();
+
+            let periods = "AM";
+            if (hours>11){
+                periods = "PM";
+                 
+                if(hours>12) hours -= 12;
+            }
+            if(mins<10) {
+                mins = "0" + mins;
+            }
+           return `${months} ${date} | ${hours} : ${mins} ${periods}`;
+        };
+
+        curDate.innerHTML = getCurrentDay() + " | "  + getCurrentTime();
+   </script>
+</body>
+
+</html>
+

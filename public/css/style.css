@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@200;300;400;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Piazzolla', serif;
+}
+:root{
+    --main-bg-color: rgb(3, 3, 3);
+    --main-color: #05dbeb;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.main-menu{
+    background-color: var(--main-bg-color) ;
+}
+/* ----------------------header---------------- */
+
+.navbar{
+    color: #fff;
+    background-color:var(--main-bg-color);
+    padding: 2rem 0;
+}
+.fa-smog{
+    margin-left: 10px;
+    color: #05dbeb;
+}
+.navbar li{
+    margin-right: 2rem;
+}
+.navbar a{
+    color: #fff;
+    font-size: 2rem;
+}
+.navbar a:hover{
+    color: #05dbeb;
+}
+.navbar-toggler{
+    background-color: #fff;
+}
+.navbar-toggler{
+    color: #c70bce;
+}
+/* ----------------nav-body-------------------- */
+.nav-body-left{
+    height: 70rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.nav-body-left p{
+    font-size: 2rem;
+}
+.nav-body-left h1{
+    font-size: 3.2rem;
+    text-transform: capitalize;
+}
+.nav-body-left h1 span{
+    color: #0584eb;
+}
+.nav-body-left button{
+    padding: .9rem 2rem;
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    box-shadow: 0 10px 12px -4px #000;
+    background: #0584eb;
+    color: #fff;
+   
+}
+.nav-body-right{
+    height: 70rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+/* ----------------------error page---------------------- */
+
+.err-image{
+    height: 25rem;
+    width: 60rem;
+    margin-bottom: 30rem;
+}
+.err-text{
+    margin-bottom: 1rem;
+}
+.err-text button{
+    margin-left: 9rem;
+}
+/* -----------------weather-page-------------- */
+
+.weather-form{
+    width: 60%;
+    position: relative;
+    margin: 5rem auto;
+}
+.weather-form input[type= "text"] {
+    width: 100%;
+    padding: 2rem 5rem 2rem 2rem;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 1.8rem;
+    border-radius: 3rem;
+    background-color: black;
+}
+::placeholder{
+    color: rgb(211, 207, 207);
+}
+
+.weather-form input[type = "Submit"]{
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 2px;
+    border: none;
+    /* background-color: #0584eb; */
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.8rem;
+    border-radius: 2.5rem;
+    padding: 0.3rem 3.2rem;
+
+}
+.weather-form input[type = "Submit"]:hover{
+    color: #0584eb;
+    background-color: #000;
+
+}
+
+.temp-info{
+    width: 45rem;
+    margin: auto;
+    min-height: 25rem;
+    background-color: rgb(0, 0, 0);
+    border-radius: 1rem;
+    
+}
+
+.temp-info-up{
+width: 100%;
+height: 20%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-radius: 1rem; 
+background-color: #0584eb;  
+}
+
+.temp-info-up p{
+    color: #fff;
+    padding-top: 2rem;
+    padding-right: 10.5rem;
+    font-size: 1.7rem;
+    
+}
+.temp-info-main{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.temp-info-main #outputName{
+    padding: 2rem;
+    color: #fff;
+    font-size: 2.3rem;
+}
+.temp-info-main .temp-info-bottom{
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+}
+.temp-info-main .temp-info-bottom p, .temp-info-main .temp-info-bottom .fa{
+    font-size: 7rem;
+}
+.fa-cloud{
+    color: #0584eb;
+}
+sup{
+    font-size: 5rem;
+    margin-top: -2rem;
+}
+.data_hide{
+    visibility: hidden;
+    transition: all 0.3s linear;
+}
+
+/*--------------------------footer -------------------- */
+.footer{
+    width: 100vw;
+    background-color: var(--main-bg-color);
+    margin: auto;   
+    line-height: 5rem;
+    position: absolute;
+    bottom: 0;
+  
+}
+.footer p{
+    text-align: center;
+    color: #fff;
+    font-size: 1.6rem;
+    
+}
+
+
+/* ----------------------responsiveness----------------- */
+@media(max-width: 768px) {
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .nav-body-left{
+        height: auto;
+        margin: 5rem 0;
+    }
+
+    .nav-body-right{
+        height: auto;
+        margin-top: 2rem 0;
+    }
+    .weather-form{
+        width: auto;
+    }
+    .temp-info{
+        width: auto;
+    }
+    .temp-info-up p{
+        width: auto;
+        padding-right: 10.5rem;
+    }
+    .footer{
+        position: fixed;
+        bottom: -30px;
+    }
+}
