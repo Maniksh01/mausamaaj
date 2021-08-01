@@ -2,7 +2,7 @@ const path = require("path");
 const express  = require("express");
 const hbs = require("hbs");
 const app = express();
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 // static path
 
